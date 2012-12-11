@@ -176,7 +176,7 @@ module ActiveRecord
       end
 
       def quote_column_name(name)
-        @quoted_column_names[name]
+        @quoted_column_names[name] ||= name.to_s
       end
 
       def quote_string(s)
