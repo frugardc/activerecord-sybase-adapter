@@ -176,10 +176,7 @@ module ActiveRecord
       end
 
       def quote_column_name(name)
-        # If column name is close to max length, skip the quotes, since they
-        # seem to count as part of the length.
-        @quoted_column_names[name] ||=
-          ((name.to_s.length + 2) <= table_alias_length) ? "[#{name}]" : name.to_s
+        @quoted_column_names[name]
       end
 
       def quote_string(s)
